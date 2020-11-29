@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "quantity": 1,
+      "name": "Bottle of perfume",
+      "imported": true,
+      "price": "32.19",
+      "category": {
+        "name": "cosmetic"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Bottle of perfume",
+      "imported": false,
+      "price": "20.89",
+      "category": {
+        "name": "cosmetic"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Headache pills",
+      "imported": false,
+      "price": "9.75",
+      "category": {
+        "name": "medical"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Box of chocolates",
+      "imported": true,
+      "price": "11.85",
+      "category": {
+        "name": "food"
+      }
+    }
+  ],
+  "saleTaxes": "6.70",
+  "total": "74.68"
+}

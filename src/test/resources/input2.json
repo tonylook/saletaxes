@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "quantity": 1,
+      "name": "Box of chocolates",
+      "imported": true,
+      "price": "10.00",
+      "category": {
+        "name": "food"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Bottle of perfume",
+      "imported": true,
+      "price": "47.50",
+      "category": {
+        "name": "cosmetic"
+      }
+    }
+  ]
+}

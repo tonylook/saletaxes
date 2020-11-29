@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "quantity": 1,
+      "name": "The Hitchhikers Guide to the Galaxy",
+      "imported": false,
+      "price": "12.49",
+      "category": {
+        "name": "book"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Stadium Arcadium",
+      "imported": false,
+      "price": "14.99",
+      "category": {
+        "name": "music"
+      }
+    },
+    {
+      "quantity": 1,
+      "name": "Chocolate bar",
+      "imported": false,
+      "price": "0.85",
+      "category": {
+        "name": "food"
+      }
+    }
+  ]
+}
