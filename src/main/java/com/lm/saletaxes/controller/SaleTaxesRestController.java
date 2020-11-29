@@ -1,8 +1,10 @@
 package com.lm.saletaxes.controller;
 
+import com.lm.saletaxes.model.Basket;
 import com.lm.saletaxes.model.Product;
 import com.lm.saletaxes.model.ReceiptDetails;
 import com.lm.saletaxes.service.SaleTaxesService;
+import com.lm.saletaxes.service.SaleTaxesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +16,8 @@ public class SaleTaxesRestController {
     @Autowired
     SaleTaxesService saleTaxesService;
 
-    @PostMapping("/calculate")
-    public ReceiptDetails calculate(List<Product> products){
+    @PostMapping("/calculateBasket")
+    public ReceiptDetails calculate(Basket basket){
         //logic
         return null;
     }
