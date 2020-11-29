@@ -3,8 +3,12 @@ package com.lm.saletaxes.model;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 @Builder
 @Data
 public class ReceiptDetails {
-    //Properties
+    private List<Product> products;
+    private String saleTaxes;
+    private String total;
 }

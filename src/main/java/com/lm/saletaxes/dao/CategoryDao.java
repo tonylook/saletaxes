@@ -1,12 +1,15 @@
 package com.lm.saletaxes.dao;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "categories")
-public class CategoriesDao {
+@Data
+public class CategoryDao {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    //properties
+    private String name;
 }

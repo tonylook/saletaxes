@@ -6,5 +6,9 @@ import lombok.Data;
 @Builder
 @Data
 public class Product {
-    //Properties
+    private Integer quantity;
+    private String name;
+    private Category category;
+    private Boolean imported;
+    private String price;
 }

@@ -1,12 +1,19 @@
 package com.lm.saletaxes.dao;
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "taxes")
-public class TaxesDao {
+@Data
+public class TaxDao {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    //properties
+    private String name;
+    private String value;
+    @OneToMany
+    private List<CategoryDao> exempt;
 }
