@@ -31,10 +31,10 @@ public class SaleTaxesServiceImpl implements SaleTaxesService {
         init.setProducts(initProd);
         AtomicReference<ReceiptDetails> receiptDetails = new AtomicReference<>(new ReceiptDetails());
         receiptDetails.set(init);
-        basket.getProducts().stream().forEach(product -> {
+        basket.getProducts().forEach(product -> {
             AtomicReference<String> importTax = new AtomicReference<>("0");
             AtomicReference<String> saleTax = new AtomicReference<>("0");
-            taxes.stream().forEach(taxDao -> {
+            taxes.forEach(taxDao -> {
                 if(taxDao.getName().equalsIgnoreCase("import tax") && product.getImported()){
                     importTax.set(getTaxAmount(product.getPrice(), taxDao.getValue()));
                 }
