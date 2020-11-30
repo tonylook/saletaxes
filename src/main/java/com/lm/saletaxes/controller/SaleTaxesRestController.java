@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 public class SaleTaxesRestController {
-    @Autowired
+
     SaleTaxesService saleTaxesService;
 
     @PostMapping("/calculateBasket")
@@ -22,6 +22,7 @@ public class SaleTaxesRestController {
         return null;
     }
 
+    @Autowired
     public void setSaleTaxesService(SaleTaxesService saleTaxesService) {
         this.saleTaxesService = saleTaxesService;
     }

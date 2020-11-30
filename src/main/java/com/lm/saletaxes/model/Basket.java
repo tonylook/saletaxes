@@ -1,11 +1,11 @@
 package com.lm.saletaxes.model;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Builder
+@NoArgsConstructor
 @Data
 public class Basket {
     private List<Product> products;
