@@ -101,4 +101,20 @@ public class SaleTaxesServiceTests {
         assertNotNull(receiptDetails);
         assertEquals(expected,receiptDetails);
     }
+
+    @Test
+    public void testQuantity() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        Basket basket = objectMapper.readValue(new File(classLoader.getResource("quantity.json").getFile()), Basket.class);
+        ReceiptDetails expected = objectMapper.readValue(new File(classLoader.getResource("quantityOut.json").getFile()), ReceiptDetails.class);
+        when(taxRepository.findAll()).thenReturn(taxes);
+
+        ReceiptDetails receiptDetails = saleTaxesService.calculate(basket);
+
+        verify(taxRepository, times(1)).findAll();
+
+        assertNotNull(receiptDetails);
+        assertEquals(expected,receiptDetails);
+    }
 }

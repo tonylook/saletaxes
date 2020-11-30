@@ -66,7 +66,7 @@ public class SaleTaxesServiceImpl implements SaleTaxesService {
         receipt.getProducts().add(product);
         BigDecimal wholePrice = new BigDecimal(product.getPrice()).multiply(new BigDecimal(product.getQuantity().toString()));
         receipt.setTotal(new BigDecimal(receipt.getTotal()).add(wholePrice).toString());
-        receipt.setSaleTaxes(new BigDecimal(receipt.getSaleTaxes()).add(new BigDecimal(taxAmount)).toString());
+        receipt.setSaleTaxes(new BigDecimal(receipt.getSaleTaxes()).add(new BigDecimal(taxAmount)).multiply(new BigDecimal(product.getQuantity().toString())).toString());
         return receipt;
     }
 
