@@ -5,12 +5,8 @@ import com.lm.saletaxes.dao.CategoryDao;
 import com.lm.saletaxes.dao.TaxDao;
 import com.lm.saletaxes.model.Basket;
 import com.lm.saletaxes.model.ReceiptDetails;
-import com.lm.saletaxes.model.Tax;
-import com.lm.saletaxes.repository.CategoryRepository;
 import com.lm.saletaxes.repository.TaxRepository;
-import com.lm.saletaxes.service.SaleTaxesService;
 import com.lm.saletaxes.service.SaleTaxesServiceImpl;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,8 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -65,21 +60,45 @@ public class SaleTaxesServiceTests {
         ClassLoader classLoader = getClass().getClassLoader();
         Basket basket = objectMapper.readValue(new File(classLoader.getResource("input1.json").getFile()), Basket.class);
         ReceiptDetails expected = objectMapper.readValue(new File(classLoader.getResource("output1.json").getFile()), ReceiptDetails.class);
-//        when(taxRepository.findAll()).thenReturn(taxes);
+        when(taxRepository.findAll()).thenReturn(taxes);
 
         ReceiptDetails receiptDetails = saleTaxesService.calculate(basket);
 
-/*
         verify(taxRepository, times(1)).findAll();
 
         assertNotNull(receiptDetails);
-        assertSame(expected, receiptDetails);
-*/
+        assertEquals(expected,receiptDetails);
+    }
 
-        System.out.println(basket.toString());
-        System.out.println(objectMapper.writeValueAsString(basket));
+    @Test
+    public void testCalc2() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        Basket basket = objectMapper.readValue(new File(classLoader.getResource("input2.json").getFile()), Basket.class);
+        ReceiptDetails expected = objectMapper.readValue(new File(classLoader.getResource("output2.json").getFile()), ReceiptDetails.class);
+        when(taxRepository.findAll()).thenReturn(taxes);
 
-//        System.out.println(receiptDetails.toString());
-//        System.out.println(objectMapper.writeValueAsString(receiptDetails));
+        ReceiptDetails receiptDetails = saleTaxesService.calculate(basket);
+
+        verify(taxRepository, times(1)).findAll();
+
+        assertNotNull(receiptDetails);
+        assertEquals(expected,receiptDetails);
+    }
+
+    @Test
+    public void testCalc3() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ClassLoader classLoader = getClass().getClassLoader();
+        Basket basket = objectMapper.readValue(new File(classLoader.getResource("input3.json").getFile()), Basket.class);
+        ReceiptDetails expected = objectMapper.readValue(new File(classLoader.getResource("output3.json").getFile()), ReceiptDetails.class);
+        when(taxRepository.findAll()).thenReturn(taxes);
+
+        ReceiptDetails receiptDetails = saleTaxesService.calculate(basket);
+
+        verify(taxRepository, times(1)).findAll();
+
+        assertNotNull(receiptDetails);
+        assertEquals(expected,receiptDetails);
     }
 }
