@@ -18,8 +18,7 @@ public class SaleTaxesRestController {
 
     @PostMapping("/calculateBasket")
     public ReceiptDetails calculate(Basket basket){
-        //logic
-        return null;
+        return saleTaxesService.calculate(basket);
     }
 
     @Autowired
