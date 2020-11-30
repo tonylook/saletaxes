@@ -1,5 +1,4 @@
 language: java
-sudo: true
 script:
   - ./mvnw clean install -B
 before_install:
