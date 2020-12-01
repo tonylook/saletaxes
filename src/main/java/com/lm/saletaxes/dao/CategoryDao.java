@@ -19,3 +19,4 @@ public class CategoryDao {
     private Long id;
     private String name;
 }
+//I tough about a category table in order to have consistent categories, flexibility and future improvements

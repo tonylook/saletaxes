@@ -23,3 +23,5 @@ public class TaxDao {
     @OneToMany
     private List<CategoryDao> exempt;
 }
+//I made a Tax table because here I can store all the tax applicable and i can say wich categories are exempt, in order
+// to mantain and evolve the application
